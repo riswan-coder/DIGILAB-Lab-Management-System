@@ -1,0 +1,50 @@
+
+    <!-- Header End -->
+    {% load static %}
+    {% block content  %}
+    {% include 'header.html' %}
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                   
+                </div>
+                <div class="col-lg-7">
+                    <h1 class="mb-4"> Login Here</h1>
+                    <div class="contact-form bg-secondary" style="padding: 30px;">
+                        <div id="success"></div>
+                        <form name="" id="contactForm" method="POST" action="adlog" novalidate="">
+                            {% csrf_token %}
+                         
+                            <div class="control-group">
+                                <input type="email" name="email" class="form-control border-0 p-4" id="email" placeholder="Your Email"
+                                    required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                           
+                        
+                            <div class="control-group">
+                                <input type="password"  name="password" class="form-control border-0 p-4" id="subject" placeholder="password"
+                                    required="required" data-validation-required-message="Please enter a password" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                           
+                            <div>
+                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">
+                                    Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    {% include 'footer.html' %}
+    {% endblock %}

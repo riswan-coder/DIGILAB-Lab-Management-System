@@ -1,0 +1,68 @@
+
+    <!-- Header End -->
+    {% load static %}
+    {% block content  %}
+    {% include 'header.html' %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    
+                   
+                </div>
+                <div class="col-lg-9">
+                    <h1 class="mb-4">Upload Your Assignments</h1>
+                    <div class="contact-form bg-secondary" style="padding: 30px;">
+                        <div id="success"></div>
+                        <form name="" id="" method="POST" action="addassi" enctype="multipart/form-data">
+                            {% csrf_token %}
+                         
+                            <div class="control-group">
+                                <input type="date" name="date" class="form-control border-0 p-4" id="date_picker" placeholder="Your Email"
+                                    required="required" data-validation-required-message="Please enter your email" />
+                                    <script language="javascript">
+                                        var today = new Date();
+                                        var dd = String(today.getDate()).padStart(2, '0');
+                                        var mm = String(today.getMonth() + 1).padStart(2, '0');
+                                        var yyyy = today.getFullYear();
+                                
+                                        today = yyyy + '-' + mm + '-' + dd;
+                                        $('#date_picker').attr('min',today);
+                                    </script>
+        
+                                <p class="help-block text-danger"></p>
+                            </div>
+                           
+                        
+                            <div class="control-group">
+                                <input type="file"  name="report" class="form-control border-0 p-4" id="subject" placeholder="report"
+                                    required="required" data-validation-required-message="Please enter a password" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="control-group">
+                                <input type="text"  name="reg_no" class="form-control border-0 p-4" id="subject" placeholder="reg_no"
+                                    required="required" data-validation-required-message="Please enter a password" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+
+                           
+                            <div>
+                                <button class="btn btn-success btn btn-lg py-3 px-4" type="submit" id="sendMessageButton">
+                                    Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    {% include 'footer.html' %}
+    {% endblock %}
